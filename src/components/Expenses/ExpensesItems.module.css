@@ -1,0 +1,95 @@
+.expenses-ul {
+  list-style: none;
+  width: 95%;
+  max-width: 50rem;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  border: 1px solid rgb(215, 215, 215);
+  background-color: rgb(173, 205, 125);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+    padding-right: 17rem;
+    padding-left: 1rem;
+}
+
+.expenses-ul li {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+    padding: 0.5rem;
+    margin: 0.75rem 12px;
+    border-radius: 5px;
+    background-color: rgb(194, 106, 90);
+    color:black;
+}
+
+.amount {
+    display: flex;
+    align-items: flex-start;
+    font-weight: bold;
+    flex-flow: column-reverse;
+    justify-content: flex-start;
+    flex: 2;
+    margin: auto 12px;
+}
+
+.description {
+    text-align: start;
+    justify-content: flex-start;
+    font-size: 1rem;
+    flex: 3;
+    margin: auto 1rem;
+}
+
+.category {
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 0.5rem;
+    text-align: start;
+    justify-content: flex-start;
+    flex: 2;
+}
+
+.totalAmount {
+    text-align: start;
+    justify-content: flex-start;
+    font-size: 1rem;
+    flex: 3;
+    margin: auto 1rem;
+}
+.expenses-ul button {
+  justify-content: flex-end;
+  margin: auto 1rem;
+  font: inherit;
+  background-color: transparent;
+  font-weight: bold;
+  padding: 0.5rem 1.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.expenses-ul .delete {
+    border: 1px solid rgb(255, 0, 0);
+    transition: background-color 1s;
+}
+
+.expenses-ul .edit {
+    border: 1px solid rgb(25, 152, 0);
+    transition: background-color 1s;
+}
+
+.expenses-ul .edit:hover {
+    background-color: rgb(25, 152, 0);
+    color: white;
+  }
+
+  .expenses-ul .delete:hover {
+    background-color: rgb(255, 0, 0);
+    color: white;
+  }
