@@ -32,7 +32,7 @@ const Footer = (props) => {
   return (
     <footer className={classes.footer}>
       <Button onClick={props.onClick}>Activate Premium</Button>
-      <Button ><CSVLink {...csvLink}>Download All Your Expenses</CSVLink></Button>
+      <Button ><CSVLink {...csvLink}>You can Download your expenses from here</CSVLink></Button>
     </footer>
   );
 };

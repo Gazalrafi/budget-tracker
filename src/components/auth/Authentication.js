@@ -40,10 +40,10 @@ const confirmPasswordInputRef=useRef();
   setIsLoading(true);
   let url;
   if(isLogin){ //
-    url='https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyDSYzPDEHee8aptSJoR17wu7oSgdkO-ZR4';
+    url='https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyDUoFU3mZ5m6E_aZRTyscL7wT_D0ImQ6QM';
     
   }else{
-    url='https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyDSYzPDEHee8aptSJoR17wu7oSgdkO-ZR4'; 
+    url='https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyDUoFU3mZ5m6E_aZRTyscL7wT_D0ImQ6QM'; 
   }
   fetch(
     url,

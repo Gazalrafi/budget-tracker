@@ -1,12 +1,18 @@
 import axios from "axios";
+import { useEffect } from "react";
 import { expenseAction } from "./expenses-reducer";
+
 
 export const fetchExpensesData = () => {
   return async (dispatch) => {
     const fetchData = async () => {
+      const localEmail = localStorage.getItem('email');
+      const clean = localEmail.split(".").join('');
+      const  Eclean = clean.split("@").join('');
+      console.log(localEmail);
       try {
         const response = await axios.get(
-          "https://new-project-10d5a-default-rtdb.firebaseio.com/expenses.json"
+          `https://new-project-10d5a-default-rtdb.firebaseio.com/${Eclean}.json`
         );
         const loadedExpenses = [];
         for (const key in response.data) {
@@ -30,9 +36,13 @@ export const fetchExpensesData = () => {
 export const addNewExpenseData = (expense) => {
   return async (dispatch) => {
     const addNewExpense = async () => {
+      const localEmail = localStorage.getItem('email')
+      const clean = localEmail.split(".").join('');
+      const  Eclean = clean.split("@").join('')
+      console.log(localEmail);
       try {
         const response = await axios.post(
-          "https://new-project-10d5a-default-rtdb.firebaseio.com/expenses.json",
+          `https://new-project-10d5a-default-rtdb.firebaseio.com/${Eclean}.json`,
           expense
         );
         if (response.status === 200) {
@@ -62,9 +72,13 @@ export const addNewExpenseData = (expense) => {
 export const removeExpenseData = (id) => {
   return async (dispatch) => {
     const removeExpense = async () => {
+      const localEmail = localStorage.getItem('email')
+      const clean = localEmail.split(".").join('');
+      const Eclean = clean.split("@").join('')
+      console.log(localEmail);
       try {
         const response = await axios.delete(
-          `https://new-project-10d5a-default-rtdb.firebaseio.com/expenses/${id}.json`
+          `https://new-project-10d5a-default-rtdb.firebaseio.com/${Eclean}/${id}.json`
         );
         if (response.status === 200) {
           console.log(response.data);
@@ -92,9 +106,13 @@ export const removeExpenseData = (id) => {
 export const editExpenseData = (objEdit, existingExpense) => {
   return async (dispatch) => {
     const editExpense = async () => {
+      const localEmail = localStorage.getItem('email')
+      const clean = localEmail.split(".").join('');
+      const  Eclean = clean.split("@").join('')
+      console.log(localEmail);
       try {
         const response = await axios.put(
-          `https://new-project-10d5a-default-rtdb.firebaseio.com/expenses/${existingExpense.id}.json`,
+          `https://new-project-10d5a-default-rtdb.firebaseio.com/${Eclean}/${existingExpense.id}.json`,
           objEdit
         );
         console.log(response.data);

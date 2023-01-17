@@ -1,6 +1,6 @@
 
- import {NavLink} from 'react-router-dom';
- import {useRef} from 'react';
+import {NavLink} from 'react-router-dom';
+import {useRef} from 'react';
 import classes from './ForgetPassword.module.css';
 
 const ForgetPassword=()=>{
@@ -14,7 +14,7 @@ const ForgetPasswordHandler=()=>{
    
     const enteredEmail=emailRef.current.value; 
 
-    fetch('https://identitytoolkit.googleapis.com/v1/accounts:sendOobCode?key=AIzaSyDSYzPDEHee8aptSJoR17wu7oSgdkO-ZR4',{
+    fetch('https://identitytoolkit.googleapis.com/v1/accounts:sendOobCode?key=AIzaSyDUoFU3mZ5m6E_aZRTyscL7wT_D0ImQ6QM',{
         method:'POST',
         body:JSON.stringify({
         requestType:"PASSWORD_RESET",

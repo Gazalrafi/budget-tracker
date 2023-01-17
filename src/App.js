@@ -7,11 +7,14 @@ import DailyExpensesPage from "./pages/DailyExpensesPage";
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect, useState } from "react";
 import { fetchExpensesData } from "./redux-store/expenses/expenses-actions";
+import { removeExpenseData } from "./redux-store/expenses/expenses-actions";
 import Footer from "./components/layout/Footer";
 import classes from "./App.module.css";
 import { themeAction } from "./redux-store/theme-reducer";
 import ThemeToggle from "./components/UI/ThemeToggle";
 import ForgetPassword from "./components/auth/ForgotPassword";
+
+ 
 function App() {
   // const authCtx = useContext(AuthContext);
   // const isLoggedIn = authCtx.isLoggedIn;
@@ -21,9 +24,12 @@ function App() {
   const expenses = useSelector((state) => state.expenses.expenses);
   const theme = useSelector((state) => state.theme.theme);
 
+  
   useEffect(() => {
     dispatch(fetchExpensesData());
   }, [dispatch]);
+
+  
 
   let amount = 0;
   expenses?.forEach((element) => {
@@ -36,14 +42,15 @@ function App() {
 
   const lightThemeHandler = () => {
     dispatch(themeAction.setTheme("dark"));
-    setToggleIsShown(false)
+    setToggleIsShown(false);
   }
   const themeCloseHandler = () => {
-    setToggleIsShown(false)
+    setToggleIsShown(false);
   }
   return (
     <div className={classes[`${theme}`]}>
       <Header />
+      
       <main>
         <Switch>
           <Route path="/auth">{!isLoggedIn && <Authentication />}</Route>
@@ -63,8 +70,8 @@ function App() {
           </Route>
         </Switch>
       </main>
-      {toggleIsShown && <ThemeToggle onClick= {lightThemeHandler} onClose={themeCloseHandler}/>}
-      {amount >= 10000 && <Footer onClick={themeHandler} />}
+      {isLoggedIn && toggleIsShown && <ThemeToggle onClick= {lightThemeHandler} onClose={themeCloseHandler}/>}
+      {isLoggedIn && amount >= 10000 && <Footer onClick={themeHandler} />}
     </div>
   );
 }

@@ -64,7 +64,7 @@ const AddExpensesForm = (props) => {
       >
         <option value="0">Select category</option>
         <option value="food">Food</option>
-        <option value="petrol">Petrol</option>
+        <option value="fuel">Fuel</option>
         <option value="salary">Salary</option>
         <option value="trip">Trip</option>
         <option value="shopping">Shopping</option>

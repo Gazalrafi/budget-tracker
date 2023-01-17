@@ -7,4 +7,4 @@ const DailyExpensesPage = () => {
   )
 }
 
-export default DailyExpensesPage
+export default DailyExpensesPage;

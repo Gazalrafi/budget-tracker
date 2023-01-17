@@ -9,7 +9,7 @@ const Profile = () => {
 
   const verifyEmailHandler = () => {
     fetch(
-      "https://identitytoolkit.googleapis.com/v1/accounts:sendOobCode?key=AIzaSyDSYzPDEHee8aptSJoR17wu7oSgdkO-ZR4",
+      "https://identitytoolkit.googleapis.com/v1/accounts:sendOobCode?key=AIzaSyDUoFU3mZ5m6E_aZRTyscL7wT_D0ImQ6QM",
       {
         method: "POST",
         body: JSON.stringify({
